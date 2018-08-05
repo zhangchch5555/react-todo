@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { FILTER_ALL } from '../action/index'
 
 const initIndex = 0;
 const initStateData = [
@@ -57,7 +58,7 @@ const addTodo = (state = initStateData, action) => {
 //    }
 //}
 
-const filterFlag = (state = 'filter_all',action) => {
+const filterFlag = (state = FILTER_ALL,action) => {
     switch (action.type) {
         case 'SET_FILTER':
             return action.filter

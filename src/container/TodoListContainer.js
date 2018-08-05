@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
 import TodoList from '../component/TodoList'
 import { toggleTodo } from '../action/index'
+import { FILTER_COMPLETED, FILTER_NOCOMPLETED } from '../action/index'
 
 const getFilterData = (addTodo, filterFlag) => {
-    if(filterFlag == 'filter_completed') {
+    if(filterFlag.toString() == FILTER_COMPLETED.toString()) {
         return addTodo.filter((item) => {
             return item.isCompleted
         })
-    } else if(filterFlag == 'filter_noCompleted') {
+    } else if(filterFlag.toString() == FILTER_NOCOMPLETED.toString()) {
         return addTodo.filter((item) => {
             return !item.isCompleted
         })

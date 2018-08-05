@@ -1,4 +1,5 @@
 import React,{ Component } from 'react'
+import { FILTER_ALL, FILTER_COMPLETED, FILTER_NOCOMPLETED } from '../action/index'
 
 export default class FilterTodo extends Component {
     constructor(prop) {
@@ -10,9 +11,9 @@ export default class FilterTodo extends Component {
 
         return (
             <div>
-                <button onClick={ () => { onclick('filter_all') }}>all</button>
-                <button onClick={ () => { onclick('filter_completed') }}>completed</button>
-                <button onClick={ () => { onclick('filter_noCompleted') }}>no completed</button>
+                <button onClick={ () => { onclick(FILTER_ALL) }}>all</button>
+                <button onClick={ () => { onclick(FILTER_COMPLETED) }}>completed</button>
+                <button onClick={ () => { onclick(FILTER_NOCOMPLETED) }}>no completed</button>
             </div>
         )
     }
