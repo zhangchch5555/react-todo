@@ -4,16 +4,17 @@ import { toggleTodo } from '../action/index'
 import { FILTER_COMPLETED, FILTER_NOCOMPLETED } from '../action/index'
 
 const getFilterData = (addTodo, filterFlag) => {
-    if(filterFlag.toString() == FILTER_COMPLETED.toString()) {
-        return addTodo.filter((item) => {
-            return item.isCompleted
-        })
-    } else if(filterFlag.toString() == FILTER_NOCOMPLETED.toString()) {
-        return addTodo.filter((item) => {
-            return !item.isCompleted
-        })
-    } else {
-        return addTodo
+    switch (filterFlag) {
+        case FILTER_COMPLETED:
+            return addTodo.filter((item) => {
+                return item.isCompleted
+            })
+        case FILTER_NOCOMPLETED:
+            return addTodo.filter((item) => {
+                return !item.isCompleted
+            })
+        default:
+            return addTodo
     }
 }
 
